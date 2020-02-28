@@ -1,13 +1,22 @@
-import React from 'react';
+import React,{ useState} from 'react';
+
 
 const searchParams = () => {
-    const location = "Seattle,WA";
+    //replace location 
+    //useState = Hooks
+const [location , updateLocation ] = useState("Seattle,WA")
+
+
     return (
         <div className = "search-params">
             <form>
-                <label>
+                <label htmlFor = "location">
                     location
-                    <input id = "location" value = {location} placeholder = "Location"/>
+                    <input id = "location" 
+                    value = {location} 
+                    placeholder = "Location"
+                    onChange = {(e)=>updateLocation(e.target.value)}
+                    />
                 </label>
                 <button>Submit</button>
             </form>
