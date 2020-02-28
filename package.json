@@ -1,0 +1,25 @@
+{
+  "name": "adopt_pets",
+  "version": "1.0.0",
+  "description": "Project Adopt_Pet",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier -- write \"src/**/*.{js,jsx}\" ",
+      "lint" : "eslint \"src/**/*{js,jsx}\" --quiet "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IjayAbby/REACT-js.git"
+  },
+  "author": "IjayAbby",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IjayAbby/REACT-js/issues"
+  },
+  "homepage": "https://github.com/IjayAbby/REACT-js#readme",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "prettier": "^1.19.1"
+  }
+}
