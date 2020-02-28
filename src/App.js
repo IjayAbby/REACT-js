@@ -1,31 +1,18 @@
-//Creating a function component called pet
-const Pet = (props) => { 
-    return React.createElement("div", null, [
-        React.createElement("h1", null, props.name),
-        React.createElement("h2", null, props.animal),
-        React.createElement("h2", null, props.breed)
-    ])
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Pet from './Pet'
+
+//Creating a function component called App
+const App = () =>{
+    return (
+        <div>
+            <h1>Adopt Me</h1>
+            <Pet name = "Luna" animal = "Dog" breed = "Havanese"></Pet>
+            <Pet name = "Pepper" animal = "Bird" breed = "Cockatiel"></Pet>
+            <Pet name = "Doink" animal = "Cat" breed = "Mix"></Pet>
+        </div>
+    )
 }
 
-const App = () => {
-    return React.createElement("div", null,[
-        React.createElement("h1", null,"Adopt Me"),
-        React.createElement(Pet,{
-            name : "Luna",
-            animal : "Dog",
-            breed : "Havanese"
-        }),
-        React.createElement(Pet,{
-            name : "Pepper",
-            animal :"Bird",
-            breed : "Cockatiel"
-        }),
-        React.createElement(Pet,{
-            name : "Doink",
-            animal : "Cat",
-            breed : "Mix"
-        })
-    ])
-}
-ReactDOM.render(React.createElement(App),
-document.getElementById("root"));
+
+ReactDOM.render(<App />,document.getElementById("root"));
