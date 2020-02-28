@@ -1,5 +1,6 @@
 import React from 'react'
-//Creating a function component called Pet
+
+
 // export default function ({name,animal,breed}){
 //     return React.createElement('div',null, [
 //         React.createElement('h1',null,name),
@@ -7,7 +8,7 @@ import React from 'react'
 //         React.createElement('h2',null,breed)
 //         ]);
 // }
-
+//Creating a function component called Pet
 const Pet = (props) => {
     return (
         <div>

@@ -1,14 +1,69 @@
- * {
-    box-sizing : border-box;
-    color : #333;
+* {
+    box-sizing: border-box;
+    color: #333;
 }
 
 body {
-    background-color : #81a696;
+    background-color: #81a696;
     background-image: url(/image.24946937.png);
-    margin : 0;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
+
+.search-params {
+    width: 1100px;
+    margin: 0 auto;
+}
+
+.search-params form {
+    background-color: #d9c148;
+    width: 360px;
+    margin: 0 25px 0 0;
+    padding: 35px 15px 15px 15px;
+    border-radius: 5px;
+    float: left;
+}
+
+.search-params label {
+  display: block;
+  width: 60px;
+}
+
+.search-params input,
+.search-params select {
+  margin-bottom: 30px;
+  font-size: 18px;
+  height: 30px;
+  width: 325px;
+  background-color: rgb(228, 228, 203);
+}
+
+.search-params button,
+#modal button,
+.details button {
+  background-color: #ad343e;
+  padding: 5px 25px;
+  color: white;
+  font-size: 18px;
+  border: #333 1px solid;
+  border-radius: 5px;
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.search-params button:hover {
+  background-color: #122622;
+}
+
+.search-params button:active {
+  background-color: #5f1d22;
+}
+
+.search-params button:focus {
+  border: 1px solid cornflowerblue;
+}
+
 
 
 /*# sourceMappingURL=/style.e308ff8e.css.map */
