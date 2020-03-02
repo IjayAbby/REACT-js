@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import {ANIMALS} from '@frontendmasters/pet'
-
+import React, { useState ,useEffect} from "react";
+import pet, {ANIMALS} from '@frontendmasters/pet';
+import dropDown from "./dropdown";
 
 const searchParams = () => { //searchParams is a funtional component
   //replace location
@@ -9,16 +9,26 @@ const searchParams = () => { //searchParams is a funtional component
   //location is the current state
   //updatelocation is the function to update
   const [location, updateLocation] = useState("Seattle,WA");
-  const [animal, updateAnimal] = useState("");
-  const [breed, setBreed] = useState("");
   const [breeds, updateBreeds] = useState([]);
+  const [animal, AnimalDropdown] = dropDown("Animal","dog",ANIMALS);
+  const [breed,BreedDropdown,updateBreed] = dropDown("Breed","",breeds);
   
+ //Function or class  components in react are written in capital letters eg AnimalDropdown
+
+ useEffect(() => {
+   updateBreeds([]);
+   updateBreed('');
+   pet.breeds(animal).then(({breeds})=> {
+     const breedItems = breeds.map(({name})=> name);
+     updateBreeds(breedItems)
+   }, console.error)
+ },[animal,updateBreed,updateBreeds])
 
   return (
     <div className="search-params">
       <form>
         <label htmlFor="location">
-          location
+          Location
           <input
             id="location"
             value={location}
@@ -26,34 +36,8 @@ const searchParams = () => { //searchParams is a funtional component
             onChange={e => updateLocation(e.target.value)}
           />
         </label>
-        <label htmlFor ="animal">
-          Animal
-          <select
-          id = "animal"
-          value = {animal}
-          onChange = {(e) => updateAnimal(e.target.value)}
-          >
-            {ANIMALS.map(animal => {
-              return <option key = {animal} value = {animal}>{animal}</option>
-            })}
-          </select>
-
-        </label>
-        <label htmlFor = "breed">
-          Breed
-          <select
-          disabled= {!breeds.length}
-          id = "breed"
-          value ={breed}
-          onChange = {(e) => updateBreeds(e.target.value)}>
-            <option>ALL</option>
-            {breeds.map((breed) => {
-              return <option key = {breed} value = {breed}>{breed}</option>
-            })}
-
-          </select>
-
-        </label>
+       <AnimalDropdown/>  
+       <BreedDropdown/>
         <button>Submit</button>
       </form>
     </div>
