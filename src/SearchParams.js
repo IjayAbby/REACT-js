@@ -10,7 +10,7 @@ const searchParams = () => { //searchParams is a funtional component
   //updatelocation is the function to update
   const [location, updateLocation] = useState("Seattle,WA");
   const [breeds, updateBreeds] = useState([]);
-  const [animal, AnimalDropdown] = dropDown("Animal","dog",ANIMALS);
+  const [animal, AnimalDropdown] = dropDown("Animal","dog",ANIMALS); //custom state
   const [breed,BreedDropdown,updateBreed] = dropDown("Breed","",breeds);
   
  //Function or class  components in react are written in capital letters eg AnimalDropdown
